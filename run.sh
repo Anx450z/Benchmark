@@ -5,7 +5,7 @@ print_separator() {
     echo "----------------------------------------"
 }
 
-# Function to run benchmark
+# Function to run benchmark and capture time
 run_benchmark() {
     local name=$1
     local cmd=$2
@@ -15,7 +15,8 @@ run_benchmark() {
 
     for i in {1..1}; do
         echo "Run $i:"
-        $cmd
+        # Use `time` command and redirect the output to capture real execution time
+        /usr/bin/time -f "\nTime: %E (elapsed), %U (user), %S (system)" $cmd
         echo "-------------"
     done
     print_separator
@@ -42,6 +43,9 @@ echo -e "\nRunning benchmarks...\n"
 # Run C benchmark
 run_benchmark "C Program" "./code_c"
 
+# Run Go benchmark
+run_benchmark "Go Program" "go run code.go"
+
 # Run Rust benchmark
 run_benchmark "Rust Program" "./target/release/rust_bench"
 
@@ -58,7 +62,7 @@ run_benchmark "Node Program" "node code.js"
 run_benchmark "Bun Program" "bun code.js"
 
 # Run Deno benchmark
-run_benchmark "Deno Program" "deno code.js"
+run_benchmark "Deno Program" "deno run code.js"
 
 # Run Python benchmark
 run_benchmark "Python Program" "python3 code.py"
