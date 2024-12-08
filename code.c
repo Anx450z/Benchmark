@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ITERATIONS 10000000
+#define ITERATIONS 1000000
 
 int main() {
     clock_t start, end;

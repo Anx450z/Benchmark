@@ -1,4 +1,4 @@
-const ITERATIONS = 10000000;
+const ITERATIONS = 1000000;
 
 function runBenchmark() {
   const start = performance.now();

@@ -1,6 +1,6 @@
 use std::time::Instant;
 
-const ITERATIONS: i64 = 10_000_000;
+const ITERATIONS: i64 = 1_000_000;
 
 fn main() {
     let start = Instant::now();

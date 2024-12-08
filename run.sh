@@ -45,11 +45,11 @@ run_benchmark "C Program" "./code_c"
 # Run Rust benchmark
 run_benchmark "Rust Program" "./target/release/rust_bench"
 
-# Run Python benchmark
-run_benchmark "Python Program" "python3 code.py"
-
 # Run Ruby benchmark
 run_benchmark "Ruby Program" "ruby code.rb"
+
+# Run Elixir benchmark
+run_benchmark "Elixir Program" "elixir code.exs"
 
 # Run Node benchmark
 run_benchmark "Node Program" "node code.js"
@@ -59,6 +59,9 @@ run_benchmark "Bun Program" "bun code.js"
 
 # Run Deno benchmark
 run_benchmark "Deno Program" "deno code.js"
+
+# Run Python benchmark
+run_benchmark "Python Program" "python3 code.py"
 
 echo "Benchmark complete!"
 

@@ -1,4 +1,4 @@
-ITERATIONS = 10000000
+ITERATIONS = 1000000
 
 start_time = Time.now
 
